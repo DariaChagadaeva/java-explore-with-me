@@ -19,7 +19,7 @@ import java.util.Map;
 
 @Service
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class StatsClient extends BaseClient{
+public class StatsClient extends BaseClient {
 
     static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
@@ -48,10 +48,10 @@ public class StatsClient extends BaseClient{
                 "start", start.format(FORMATTER),
                 "end", end.format(FORMATTER)
         );
-        if(uris != null) {
+        if (uris != null) {
             params.put("uris", uris);
         }
-        if(unique) {
+        if (unique) {
             params.put("unique", true);
         }
         return get("/stats", params);

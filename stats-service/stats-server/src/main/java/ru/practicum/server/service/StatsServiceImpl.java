@@ -20,7 +20,7 @@ import java.util.List;
 @Slf4j
 @Transactional(readOnly = true)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class StatsServiceImpl implements StatsService{
+public class StatsServiceImpl implements StatsService {
     final StatsRepository statsRepository;
 
     @Override
@@ -34,14 +34,14 @@ public class StatsServiceImpl implements StatsService{
     public List<ViewStats> getStats(LocalDateTime start, LocalDateTime end, List<String> uris, Boolean unique) {
         validateDate(start, end);
         log.info("Statistics by parameters start = {}, end = {}, uris = {}, unique = {}", start, end, uris, unique);
-        if(uris == null || uris.isEmpty()) {
-            if(unique) {
+        if (uris == null || uris.isEmpty()) {
+            if (unique) {
                 return statsRepository.getStatsWithUniqueIp(start, end);
             } else {
                 return statsRepository.getStats(start, end);
             }
         } else {
-            if(unique) {
+            if (unique) {
                 return statsRepository.getStatsAndUrisWithUniqueIp(start, end, uris);
             } else {
                 return statsRepository.getStatsAndUris(start, end, uris);
@@ -50,7 +50,7 @@ public class StatsServiceImpl implements StatsService{
     }
 
     private void validateDate(LocalDateTime start, LocalDateTime end) {
-        if(start.isAfter(end)) {
+        if (start.isAfter(end)) {
             throw new DateException("Illegal Date");
         }
     }
