@@ -6,11 +6,10 @@ import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.practicum.dto.EndpointHit;
-import ru.practicum.dto.ViewStats;
-import ru.practicum.server.exception.DateException;
-import ru.practicum.server.repository.StatsRepository;
+import ru.practicum.dto.model.EndpointHit;
+import ru.practicum.dto.model.ViewStats;
 import ru.practicum.server.mapper.StatsMapper;
+import ru.practicum.server.repository.StatsRepository;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -32,7 +31,6 @@ public class StatsServiceImpl implements StatsService {
 
     @Override
     public List<ViewStats> getStats(LocalDateTime start, LocalDateTime end, List<String> uris, Boolean unique) {
-        validateDate(start, end);
         log.info("Statistics by parameters start = {}, end = {}, uris = {}, unique = {}", start, end, uris, unique);
         if (uris == null || uris.isEmpty()) {
             if (unique) {
@@ -46,12 +44,6 @@ public class StatsServiceImpl implements StatsService {
             } else {
                 return statsRepository.getStatsAndUris(start, end, uris);
             }
-        }
-    }
-
-    private void validateDate(LocalDateTime start, LocalDateTime end) {
-        if (start.isAfter(end)) {
-            throw new DateException("Illegal Date");
         }
     }
 }
