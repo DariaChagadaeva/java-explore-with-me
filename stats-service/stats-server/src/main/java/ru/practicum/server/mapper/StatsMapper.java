@@ -1,6 +1,7 @@
 package ru.practicum.server.mapper;
 
-import ru.practicum.dto.EndpointHit;
+import ru.practicum.dto.CommonConstants;
+import ru.practicum.dto.model.EndpointHit;
 import ru.practicum.server.model.Stats;
 
 import java.time.LocalDateTime;
@@ -12,7 +13,7 @@ public class StatsMapper {
         stats.setApp(endpointHit.getApp());
         stats.setUri(endpointHit.getUri());
         stats.setIp(endpointHit.getIp());
-        stats.setTimestamp(LocalDateTime.parse(endpointHit.getTimestamp(), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+        stats.setTimestamp(LocalDateTime.parse(endpointHit.getTimestamp(), DateTimeFormatter.ofPattern(CommonConstants.DATE_FORMAT)));
         return stats;
     }
 }
