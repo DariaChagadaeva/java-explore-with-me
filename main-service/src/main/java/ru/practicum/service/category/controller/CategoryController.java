@@ -20,8 +20,8 @@ import java.util.List;
 @Validated
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class CategoryController {
-    private static final String ADMIN_PATH = "/admin/categories";
-    private static final String PUBLIC_PATH = "/categories";
+    static final String ADMIN_PATH = "/admin/categories";
+    static final String PUBLIC_PATH = "/categories";
     final CategoryService categoryService;
 
     @PostMapping(value = ADMIN_PATH)
