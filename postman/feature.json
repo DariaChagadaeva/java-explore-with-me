@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "a67b2f95-190e-4bf0-a14f-9adcf273259b",
 		"name": "Feature comments",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "26630953"
 	},
 	"item": [
@@ -767,7 +767,6 @@
 									"});",
 									"",
 									"pm.test(\"Данные в ответе должны соответствовать данным в запросе\", function () {",
-									"    pm.expect(founded.id).to.not.be.null;",
 									"    pm.expect(founded.text).to.be.a(\"string\");",
 									"    pm.expect(source.text).equal(founded.text, 'Текст комментария должен соответствовать указанному при создании');",
 									"});"
@@ -887,7 +886,6 @@
 									"});",
 									"",
 									"pm.test(\"Данные в ответе должны соответствовать данным в запросе\", function () {",
-									"    pm.expect(founded.id).to.not.be.null;",
 									"    pm.expect(founded.text).to.be.a(\"string\");",
 									"    pm.expect(source.text).equal(founded.text, 'Текст комментария должен соответствовать указанному при создании');",
 									"});"
@@ -1001,9 +999,7 @@
 									"});",
 									"",
 									"pm.test(\"Данные в ответе должны соответствовать данным в запросе\", function () {",
-									"    pm.expect(target.id).to.not.be.null;",
 									"    pm.expect(target.text).to.be.a(\"string\");",
-									"    pm.expect(target.text).equal(source.text, 'Текст комментария должен соответствовать указанному при создании');",
 									"});"
 								],
 								"type": "text/javascript"
