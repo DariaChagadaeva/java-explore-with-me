@@ -100,12 +100,9 @@ public class RequestServiceImpl implements RequestService {
     @Override
     public List<ParticipationRequestDto> getUserEventRequests(Long userId, Long eventId) {
         log.info("Method getUserEventRequests invoke");
-        Event event = eventService.getEvent(eventId);
-        if (!userId.equals(event.getInitiator().getId())) {
-            throw new ConflictException("User is not the initiator");
-        }
+        eventService.getEvent(eventId);
         log.info("Get requests information to participate in the event id = {} of user id = {}", eventId, userId);
-        return requestRepository.findAllByEventId(eventId).stream()
+        return requestRepository.findByEventId(eventId).stream()
                 .map(requestMapper::fromModelToDto).collect(Collectors.toList());
     }
 
