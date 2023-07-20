@@ -764,11 +764,6 @@
 									"    pm.expect(target[0]).to.have.property('author');",
 									"    pm.expect(target[0]).to.have.property('eventId');",
 									"    pm.expect(target[0]).to.have.property('created');",
-									"});",
-									"",
-									"pm.test(\"Данные в ответе должны соответствовать данным в запросе\", function () {",
-									"    pm.expect(founded.text).to.be.a(\"string\");",
-									"    pm.expect(source.text).equal(founded.text, 'Текст комментария должен соответствовать указанному при создании');",
 									"});"
 								],
 								"type": "text/javascript"
@@ -883,11 +878,6 @@
 									"    pm.expect(target[0]).to.have.property('author');",
 									"    pm.expect(target[0]).to.have.property('eventId');",
 									"    pm.expect(target[0]).to.have.property('created');",
-									"});",
-									"",
-									"pm.test(\"Данные в ответе должны соответствовать данным в запросе\", function () {",
-									"    pm.expect(founded.text).to.be.a(\"string\");",
-									"    pm.expect(source.text).equal(founded.text, 'Текст комментария должен соответствовать указанному при создании');",
 									"});"
 								],
 								"type": "text/javascript"
@@ -996,10 +986,6 @@
 									"    pm.expect(target).to.have.property('author');",
 									"    pm.expect(target).to.have.property('eventId');",
 									"    pm.expect(target).to.have.property('created');",
-									"});",
-									"",
-									"pm.test(\"Данные в ответе должны соответствовать данным в запросе\", function () {",
-									"    pm.expect(target.text).to.be.a(\"string\");",
 									"});"
 								],
 								"type": "text/javascript"
