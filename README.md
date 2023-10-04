@@ -11,10 +11,10 @@ public - for all users.
 Both services follow a RESTful design and are built using Spring Boot and Maven. Each service stores its data in a separate PostgreSQL database.
 
 # Stack
-Java 11
-Spring Boot
-Maven
-Lombock
-PostgreSQL and H2
-Docker
+- Java 11
+- Spring Boot
+- Maven
+- Lombock
+- PostgreSQL and H2
+- Docker
 
